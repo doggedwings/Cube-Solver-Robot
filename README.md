@@ -4,7 +4,6 @@ An autonomous Rubik's Cube solving robot built around an ESP32, six NEMA 17 step
 
 <img width="2160" height="2880" alt="image" src="https://github.com/user-attachments/assets/00a8a205-b462-490b-b0b2-0f6d31ea2847" />
 
-
 ## Why I Built This
 I've been solving Rubik's Cubes casually for almost a decade, and my best time is still over 20 seconds. I figured if I couldn't get faster, I'd build something that could. This robot scans a scrambled cube with a phone camera, computes the optimal solution, and physically solves it in well under 10 seconds using 6 stepper motors.
 
