@@ -2,8 +2,8 @@
 
 ESP32:
 
-Open code//motor_control/motor_control.ino in Arduino IDE
-Board: ESP32 Dev Module, select the correct COM port, upload
+Open Motor_controller.ino in Arduino IDE
+Board: ESP32 Dev Module, select the correct COM port, and upload
 
 Web App:
 
