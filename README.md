@@ -50,17 +50,3 @@ Browsers block camera access on non-HTTPS connections, so the Flask app runs wit
 
 Custom design 3d printed frame made in Fusion 360, 6 motor mounts (4 side + top + bottom), magnetic top piece for easy clip on and off for cube loading, and stepper motor connector that goes into the stepper motor shaft and connects to a hex design cube connector that turns the face. 
 
-## Tutorial on how to run it
-
-ESP32:
-
-Open code//motor_control/motor_control.ino in Arduino IDE
-Board: ESP32 Dev Module, select the correct COM port, upload
-
-Web App:
-
-IN TERMINAL OR BASH
-pip install flask opencv-python numpy pyserial kociemba
-python code/python/app.py
-
-Open the printed HTTPS address on your phone, allow camera access, calibrate, scan, solve.
