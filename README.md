@@ -12,7 +12,7 @@ I've been solving Rubik's Cubes casually for almost a decade, and my best time i
 
 ## How It Works
 
-You scramble a cube and place it in the frame. Open the web app on your phone, calibrate the 6 colors, and scan all 6 faces by holding the cube up to the camera one face at a time. The app figures out the cube state, runs it through a solving algorithm, and sends the move sequence to the robot, which then physically executes every turn until the cube is solved.
+You scramble a cube and place it in the frame. Open the web app on your phone, calibrate the 6 colours, and scan all 6 faces by holding the cube up to the camera one face at a time. The app figures out the cube state, runs it through a solving algorithm, and sends the move sequence to the robot, which then physically executes every turn until the cube is solved.
 
 ## Hardware Specs
 
@@ -28,19 +28,19 @@ Frame & Couplers: Custom 3D printed (PETG), Fusion 360 designed
 
 1. Color Detection That Actually Works
 
-Red and orange kept getting confused with fixed HSV thresholds. The fix was calibrating against the specific cube and lighting: white is detected by saturation (cutoff set between calibrated white and the least saturated color), and every other sticker is classified by circular hue distance to the calibrated reference hues. This correctly handles red wrapping around 0/180 in HSV, which finally separated red from orange reliably. (more detail in journal)
+Red and orange kept getting confused with fixed HSV thresholds. The fix was calibrating against the specific cube and lighting: white is detected by saturation (cutoff set between calibrated white and the least saturated colour), and every other sticker is classified by circular hue distance to the calibrated reference hues. This correctly handles red wrapping around 0/180 in HSV, which finally separated red from orange reliably. 
 
 2. 6 Motor Coordination Over Serial
 
-The ESP32 receives a full move sequence (e.g. R U2 D' B D' L2 F') as one string over Serial, parses it move by move, and executes each one including double turns and inverses by reversing direction or doubling the step count. Each motor also has its own tunable step count since print tolerances varied slightly across the 6 couplers. (more detail in journal)
+The ESP32 receives a full move sequence (e.g. R U2 D' B D' L2 F') as one string over Serial, parses it move by move, and executes each one including double turns and inverses by reversing direction or doubling the step count. Each motor also has its own tunable step count since print tolerances varied slightly across the 6 couplers. 
 
 3. The Coupler Design (4 Iterations Deep)
 
-Connecting a 5mm D shaft motor to a Rubik's cube center cap was harder than expected. The final design is a hex peg that seats into the center cap hole, with a D bore and set screw on the motor side. It took 4 print iterations since PETG shrinks about 0.1 to 0.2mm from the CAD dimensions, so each version had to compensate to get a snug fit. (more detail in journal)
+Connecting a 5mm D shaft motor to a Rubik's cube center cap was harder than expected. The final design is a hex peg that seats into the center cap hole, with a D bore and set screw on the motor side. It took 4 print iterations since PETG shrinks about 0.1 to 0.2mm from the CAD dimensions, so each version had to compensate to get a snug fit. 
 
 4. Phone Camera Over HTTPS
 
-Browsers block camera access on non-HTTPS connections, so the Flask app runs with an ad hoc SSL context, letting the phone connect over the local network and stream camera frames to the server for processing. (more detail in journal)
+Browsers block camera access on non-HTTPS connections, so the Flask app runs with an ad hoc SSL context, letting the phone connect over the local network and stream camera frames to the server for processing. 
 
 ## Schematic
 
