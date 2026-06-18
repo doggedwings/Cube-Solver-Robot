@@ -42,8 +42,9 @@ Connecting a 5mm D shaft motor to a Rubik's cube center cap was harder than expe
 
 Browsers block camera access on non-HTTPS connections, so the Flask app runs with an ad hoc SSL context, letting the phone connect over the local network and stream camera frames to the server for processing. 
 
-## Schematic
+## Schematic 
 
+*Note that the A4988 Motor Driver used in the schematic is different from the one used in the actual build, but the logic is the same, just the pinouts are different
 <img width="1104" height="597" alt="Schematic" src="https://github.com/user-attachments/assets/f76fce13-379c-4ea4-aba1-69ef20a0bbd6" />
 
 ## CAD 
